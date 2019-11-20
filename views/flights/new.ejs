@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NEW</title>
+</head>
+<body>
+    <h2>New Flights:</h2>
+
+    <form action="/flights" method="POST">
+        <label>Airline:
+            <select name="airline">
+                <option value="American">American</option>
+                <option value="Southwest">Southwest</option>
+                <option value="United">United</option>
+            </select>
+        </label>
+
+        <label>FlightNo:
+            <input type="text" name="flightNo">
+        </label>
+
+        <label>Departures:
+            <input type="text" name="depart">
+        </label>
+
+        <input type="submit" value="Add Flight">
+    </form>  
+    <p><a href="/flights">Back</a></p>
+</body>
+</html>
