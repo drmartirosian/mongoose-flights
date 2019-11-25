@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SHOW</title>
+</head>
+<body>
+  <h1>SHOW</h1>
+
+  <table>
+    <thead>
+      <th>Airport</th>
+      <th>Arrival</th>
+    </thead>
+    <tbody>
+      <% flights.forEach(function(flight) { %>
+        <tr>
+          <td><%= destination.airport %></td>
+          <td><%= destination.Arrival %></td>          
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+
+  <form action="/flights" method="POST">
+    <label>Airport:
+      <select name="airport">
+        <option value="AUS">AUS</option>
+        <option value="DAL">DAL</option>
+        <option value="LAX">LAX</option>
+        <option value="SAN">SAN</option>
+        <option value="SEA">SEA</option>
+      </select>
+    </label>
+    <label>Arrival:
+      <input type="Date" name="destination">
+    </label>
+    <input type="submit" value="Add">
+  </form> 
+
+  <a href="/flights/new">Add Flights</a>-<a href="/flights/show">Show Flights</a>
+</body>
+</html>
