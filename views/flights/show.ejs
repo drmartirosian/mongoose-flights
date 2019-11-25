@@ -15,11 +15,9 @@
       <th>Arrival</th>
     </thead>
     <tbody>
-      <% flights.forEach(function(flight) { %>
-        <tr>
-          <td><%= destination.airport %></td>
-          <td><%= destination.Arrival %></td>          
-        </tr>
+      <% flights.forEach(function(f) { %>
+        <td><%= f.airport %></td>
+        <td><%= f.Arrival %></td>          
       <% }); %>
     </tbody>
   </table>

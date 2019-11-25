@@ -16,7 +16,7 @@ var ticketSchema = new Schema ({
   },
   //------------flight-----------
   price: {
-    type: SVGSwitchElement.Types.ObjectId,
+    type: Schema.Types.ObjectId,
     ref: 'Flight',
   },
 });

@@ -7,11 +7,9 @@ module.exports = {
   show: showFlight,
 };
 
-function index (req, res, next) {
+function index (req, res) {
   Flight.find({}, function(err, flights) {
-      res.render('flights/index', {
-        flights
-      });
+      res.render('flights/index', {flights});
   });
 };
 
@@ -28,7 +26,7 @@ function create(req, res) {
 };
 
 function showFlight(req, res) {
-  Flight.findById(req.params.id, function(){
+  Flight.findById(req.params.id, function(err, flights){
     res.render('flights/show', {
       title: 'Flights',
       flights,
