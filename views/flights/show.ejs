@@ -7,49 +7,43 @@
     <title>SHOW</title>
 </head>
 <body>
-  <h1>SHOW</h1>
-  <table>
-    <thead>
-      <th>Airline</th>
-      <th>FlightNo</th>
-      <th>Depart</th>
-      <th>Airport</th>
-    </thead>
-    <tbody>
-        <% flights.forEach(function(f){ %>
-        <td><%= f.airline %></td>
-        <td><%= f.flightNo %></td>  
-        <td><%= f.depart %></td>   
-        <td><%= f.airport %></td>   
-        <% }); %>   
-    </tbody>
-  </table>
 
-  <form action="/show" method="post">
-    <label>Arrives 
-      <input name="flightNo" type="number"> 
-    </label>
-    <label>Airline:
-      <select name="airline">
-        <option value="AUS">American</option>
-        <option value="DAL">Southwest</option>
-        <option value="LAX">United</option>
-      </select>
-    </label>
-    <label>Departure: 
-      <input type="Date" name="departs"> 
-    </label>
-    <label> Destination:
-      <select name="airport">
-        <option value="AUS">AUS</option>
-        <option value="DAL">DAL</option>
-        <option value="LAX">LAX</option>
-        <option value="SAN">SAN</option>
-        <option value="SEA">SEA</option>
-      </select>
-    </label>
-    <input type="submit" value="Add">
-  </form> 
-  <a href="/flights/new">Add Flights</a>
+
+  <ul>
+    <label>AIRLINE</label>
+    <li><%= flights.airline %> </li> 
+
+    <label>FlightNo</label>
+    <li><%= flights.flightNum %></li> 
+
+    <label>airport</label>
+    <li><%= flights.airport %></li>
+
+    <label>Departure</label>
+    <li><%= flights.departs %></li> 
+
+    <li>Destination: </li>
+
+    <% if(flights.destination != 0) { %>
+      <% flights.destination.forEach(function(f) { %>
+        <li><%= f.airport %></li>
+        <li><%= f.arrival %></li>
+      <% }); %>
+    <% }; %>
+  </ul>
+  
+  <form action="/flights/<%=flights._id %>/details" method="POST">
+    <select name="airport">
+      <option value="AUS">AUS</option>
+      <option value="DAL">TX</option>
+      <option value="LAX">LAX</option>
+      <option value="SAN">SAN</option>
+      <option value="SEA">SEA</option>
+    </select>
+    <input type="date" name="arrival"></input>
+    <button type='submit'>Submit</button>
+  </form>
+  
+  <a href="/tickets/new">Ticket</a>
 </body>
 </html>
