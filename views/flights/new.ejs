@@ -6,44 +6,26 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>NEW</title>
 </head>
-
-
-
-
-
-
-
-
-
-
-
 <body>
     <h2>New Flights:</h2>
-    
     <form action="/flights" method="POST">
-        <label>Airline:
+        <label name="airline">Airline:
             <select name="airline">
                 <option value="American">American</option>
                 <option value="Southwest">Southwest</option>
                 <option value="United">United</option>
             </select>
-        </label>     
+        </label>  
 
-
-
-
-        <label>FlightNo:
+        <label name="flightNo">FlightNo:
             <input type="number" name="flightNo">
         </label>
-        
 
-
-
-        <label>Depart:
+        <label name="departs">Depart:
             <input type="Date" name="departs">
         </label>
 
-        <label>Airport:
+        <label name="airport">Airport:
             <select name="airport">
                 <option>LAX</option>
                 <option>SAN</option>
@@ -55,7 +37,6 @@
 
         <input type="submit" value="Add Flight">
     </form>  
-    
     <p><a href="/flights">Back</a></p>
 </body>
 </html>

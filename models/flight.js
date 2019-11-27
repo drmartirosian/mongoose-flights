@@ -24,27 +24,29 @@ var flightsSchema = new Schema({
     type: String,
     //enum only Am, South, and United
     enum: ['American', 'Southwest', 'United'],
+
   },
   //----------------------------------
   flightNo: {
     type: Number,
     //number between 10-9999
     min: 10, max: 9999,
+
   },
   //----------------------------------
   airport: {
     type: String,
     enum: ['AUS', 'DAL', 'LAX', 'SAN', 'SEA'],
     default: 'SAN',
+
   }, 
   //----------------------------------
   depart: {
     type: Date,
-    //1 year from date
-    default: function() {
-      return new Date().now() - 364*24*60*60*1000;
-    }
-  }, 
+    required: true,
+    default: function(){
+        return new Date(new Date().setFullYear(new Date().getFullYear() + 1))}
+},
   //------------------------------------
   destination: [destinationSchema],
   //------------------------------------

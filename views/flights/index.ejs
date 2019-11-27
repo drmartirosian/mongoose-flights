@@ -8,20 +8,13 @@
     <title>FLIGHTS INDEX</title>
 </head>
 <body>
-
-
-
-
   <table>
     <thead>
       <th>Airline</th>
       <th>Airport</th>
       <th>FlightNo</th>
       <th>Departure</th>
-      <th>Details</th>
     </thead>
-
-
     <tbody>
       <% flights.forEach(function(f){ %>
       <tr> 
@@ -31,15 +24,9 @@
         <td><%= f.depart %></td>
         <td><a href="/flights/<%= f._id %>">Details</a></td>
       </tr>
-
       <% }); %>
-      
     </tbody>
-
-
-
   </table>
-
   <br>
   <a href="flights/new">NEW FLIGHT</a>
   

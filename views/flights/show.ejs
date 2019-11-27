@@ -8,7 +8,6 @@
 </head>
 <body>
   <h1>SHOW</h1>
-
   <table>
     <thead>
       <th>Airline</th>
@@ -17,20 +16,19 @@
       <th>Airport</th>
     </thead>
     <tbody>
+        <% flights.forEach(function(f){ %>
         <td><%= f.airline %></td>
         <td><%= f.flightNo %></td>  
         <td><%= f.depart %></td>   
-        <td><%= f.airport %></td>       
+        <td><%= f.airport %></td>   
+        <% }); %>   
     </tbody>
   </table>
-
-
 
   <form action="/show" method="post">
     <label>Arrives 
       <input name="flightNo" type="number"> 
     </label>
-    
     <label>Airline:
       <select name="airline">
         <option value="AUS">American</option>
@@ -38,11 +36,9 @@
         <option value="LAX">United</option>
       </select>
     </label>
-
     <label>Departure: 
       <input type="Date" name="departs"> 
     </label>
-
     <label> Destination:
       <select name="airport">
         <option value="AUS">AUS</option>
@@ -52,11 +48,8 @@
         <option value="SEA">SEA</option>
       </select>
     </label>
-
     <input type="submit" value="Add">
   </form> 
-
-
   <a href="/flights/new">Add Flights</a>
 </body>
 </html>
