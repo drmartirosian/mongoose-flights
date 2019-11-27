@@ -11,19 +11,39 @@
 
   <table>
     <thead>
+      <th>Airline</th>
+      <th>FlightNo</th>
+      <th>Depart</th>
       <th>Airport</th>
-      <th>Arrival</th>
     </thead>
     <tbody>
-      <% flights.forEach(function(f) { %>
-        <td><%= f.airport %></td>
-        <td><%= f.Arrival %></td>          
-      <% }); %>
+        <td><%= f.airline %></td>
+        <td><%= f.flightNo %></td>  
+        <td><%= f.depart %></td>   
+        <td><%= f.airport %></td>       
     </tbody>
   </table>
 
-  <form action="/flights" method="POST">
-    <label>Airport:
+
+
+  <form action="/show" method="post">
+    <label>Arrives 
+      <input name="flightNo" type="number"> 
+    </label>
+    
+    <label>Airline:
+      <select name="airline">
+        <option value="AUS">American</option>
+        <option value="DAL">Southwest</option>
+        <option value="LAX">United</option>
+      </select>
+    </label>
+
+    <label>Departure: 
+      <input type="Date" name="departs"> 
+    </label>
+
+    <label> Destination:
       <select name="airport">
         <option value="AUS">AUS</option>
         <option value="DAL">DAL</option>
@@ -32,12 +52,11 @@
         <option value="SEA">SEA</option>
       </select>
     </label>
-    <label>Arrival:
-      <input type="Date" name="destination">
-    </label>
+
     <input type="submit" value="Add">
   </form> 
 
-  <a href="/flights/new">Add Flights</a>-<a href="/flights/show">Show Flights</a>
+
+  <a href="/flights/new">Add Flights</a>
 </body>
 </html>

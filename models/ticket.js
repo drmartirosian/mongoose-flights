@@ -1,8 +1,6 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-
-
 var ticketSchema = new Schema ({
   //-----------seat------------
   seat: {
@@ -14,13 +12,6 @@ var ticketSchema = new Schema ({
     type: Number,
     min: 0, max: 1000,
   },
-  //------------flight-----------
-  price: {
-    type: Schema.Types.ObjectId,
-    ref: 'Flight',
-  },
 });
-
-
 
 module.exports = mongoose.model('Ticket', ticketSchema);

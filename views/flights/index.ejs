@@ -7,28 +7,41 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <title>FLIGHTS INDEX</title>
 </head>
-
-
-
-
-
 <body>
+
+
+
+
   <table>
     <thead>
       <th>Airline</th>
+      <th>Airport</th>
       <th>FlightNo</th>
       <th>Departure</th>
       <th>Details</th>
     </thead>
+
+
     <tbody>
       <% flights.forEach(function(f){ %>
+      <tr> 
         <td><%= f.airline %></td>
+        <td><%= f.airport %></td>
         <td><%= f.flightNo %></td>
-        <td><%= f.departs %></td>
-        <td><a href="/">Details</a></td>
+        <td><%= f.depart %></td>
+        <td><a href="/flights/<%= f._id %>">Details</a></td>
+      </tr>
+
       <% }); %>
+      
     </tbody>
+
+
+
   </table>
-  <a href="flights/new">
+
+  <br>
+  <a href="flights/new">NEW FLIGHT</a>
+  
 </body>
 </html>

@@ -9,7 +9,10 @@ module.exports = {
 
 function index (req, res) {
   Flight.find({}, function(err, flights) {
-      res.render('flights/index', {flights});
+    // console.log(flights);
+      res.render('flights/index', {
+        flights,
+      });
   });
 };
 
@@ -28,8 +31,8 @@ function create(req, res) {
 function showFlight(req, res) {
   Flight.findById(req.params.id, function(err, flights){
     res.render('flights/show', {
-      title: 'Flights',
       flights,
     });  
-  });
- };
+  })
+};
+
